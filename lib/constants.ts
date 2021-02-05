@@ -71,6 +71,10 @@ export const NAVIGATION = [
   {
     name: 'Jobs',
     route: '/jobs'
+  },
+  {
+    name: 'Amoeba',
+    route: '/amoeba'
   }
 ];
 

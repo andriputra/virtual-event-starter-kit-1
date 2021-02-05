@@ -39,6 +39,11 @@ export type Stage = {
   schedule: Talk[];
 };
 
+export type Amoeba = {
+  name: string;
+  video: string;
+};
+
 export type Talk = {
   title: string;
   description: string;

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Job, Sponsor, Stage, Speaker } from '@lib/types';
+import { Job, Sponsor, Stage, Speaker, Amoeba } from '@lib/types';
 
 const API_URL = 'https://graphql.datocms.com/';
 const API_TOKEN = process.env.DATOCMS_READ_ONLY_API_TOKEN;
@@ -142,4 +142,16 @@ export async function getAllJobs(): Promise<Job[]> {
   `);
 
   return data.allJobs;
+}
+
+export async function getAllAmoebas(): Promise<Amoeba[]> {
+  const data = await fetchCmsAPI(`
+    {
+      allAmoebas(first: 100, orderBy: order_ASC) {
+        name
+        video
+    }
+  `);
+
+  return data.allAmoebas;
 }
